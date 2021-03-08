@@ -1,0 +1,41 @@
+/* page load */
+.outer-images {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images {
+        max-width: 600px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: space-around;
+}
+#charOptionsSelect{
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-around;
+}
+
+.charSelectButtons{
+    margin: 5px;
+}
+
+.charSelectCard {
+    height:fit-content;
+}
+
+img {
+    height: 100px;
+    padding: 5px;
+}
+
+
+
