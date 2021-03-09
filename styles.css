@@ -1,41 +1,181 @@
 /* page load */
-.outer-images {
-    
+
+body{
     display: flex;
     align-items: center;
-    justify-content: center;
+   
+   
 }
-.images {
-        max-width: 600px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        align-content: space-around;
-}
-#charOptionsSelect{
-    width: 100%;
+
+/* body {
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-between;
+} */
+
+/*character selection*/
+.outer-images {
+    display: flex;
+    width: 600px;
+    height: 1235px;
+    /* align-items: center;
+    justify-content: center; */
+}
+.images {
+    width: 600px;
+    height: 1235px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+.charSelectCard {
+    box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
+    border-radius: 6px;
+    padding: 10px;
+    height:150;
+    width: 150;
+    background-image: url(card2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+	flex-direction: column;
+	/* flex-wrap: wrap; */
+	justify-content: space-around;
 	align-items: center;
 	align-content: space-around;
+    margin-top: 2px;
 }
-
+img {
+    box-shadow:20px red;
+    border-radius: 6px;
+    height: 100px;
+    margin-bottom: 50px;
+    /* padding: 5px; */
+}
+/* button div */
+#charOptionsSelect{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
 .charSelectButtons{
     margin: 5px;
 }
 
-.charSelectCard {
-    height:fit-content;
+/* begin menu (selected characters) */
+.outer-begin-menu{
+    height: 1235px;
+    display: flex;
+    /* max-width: 600px; */
+    flex-direction: column;
 }
 
-img {
-    height: 100px;
-    padding: 5px;
+.begin-menu-panel{
+    height: 1235px;
+    display: flex;
+    /* max-width: 400px; */
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    background-color: aqua;
+}
+
+/* ---------- main session ------------- */
+.session-main{
+   margin:auto;
+    max-height: fit-content;
+    max-width: fit-content;
+    display: flex;
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+    border:1px solid;
+
+}
+.session-top{
+    display: flex;
+    max-height: 100em;
+    min-height:40em;
+    max-width: 200em;
+    min-width:80em;
+    
+    border:1px solid;
+    /* display: flex;
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: stretch; */
+	/* align-content: flex-start; */ 
+	
+}
+.session-bottom{
+    display: flex;
+    max-height: 100em;
+    min-height:25em;
+    max-width: 200em;
+    min-width:80em;
+   
+    border:1px solid;
+    /* display: flex;
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: stretch; */
+	/* align-content: flex-start; */ 
+	
 }
 
 
+ .outer-char-bio-panel{
+    background-color: grey;
+    display: flex;
+    min-width: 25em;
+    max-height: 40em;
+   
+   
+ }
+ 
+ .outer-mystery-panel{
+         display: flex;
+         background-color: blue;
+         min-width: 25em;
+         max-height: 40em;
+  
+         
+      }
+     
+     .outer-scratch-panel{
+         max-height: 40em;
+         float:right;
+         margin-left: auto;
+         background-color: grey;
+         display: flex;
+         min-width: 30em;
+        
+         
+        }
+        /*
+        .outer-character-display-panel{
+                display: flex;
+                background-color: green;
+                min-width: 200;
+                
+               
+             } */
 
+
+    

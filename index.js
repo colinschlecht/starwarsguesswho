@@ -29,13 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
 })
 
+// notes - perhaps change this and the menu to be displayed at page load, 
+//then load the cards to the divs when clicked
+
 
 // pre-game character selection display
 
+const outerImagesDiv = document.querySelector(".outer-images")
 function displayCharOptions(charList, optionsArray){
-    let buttonDiv = document.createElement('div')
-    let outerImagesDiv = document.querySelector(".outer-images")
     let imagesDiv = document.createElement("div")
+    let buttonDiv = document.createElement('div')
     let first = document.createElement('button')
     let second = document.createElement('button')
     let third = document.createElement('button')
@@ -70,20 +73,58 @@ function displayCharOptions(charList, optionsArray){
         let charCard = document.createElement('div')
         charCard.id = char.id
             charCard.className = "charSelectCard"
-            let cname = document.createElement('h4')
+            let cname = document.createElement('p')
             cname.textContent = char.name
             let pic = document.createElement('img')
             pic.src = `public/${char.image}`
-            pic.addEventListener('click', ()=> chooseCharacters(char))    
+            pic.addEventListener('click', ()=> {
+                chooseCharacters(char)
+            })    
             charCard.append(cname, pic)
             imagesDiv.appendChild(charCard)
         }
     buttonDiv.append(first, second, third, fourth)
     imagesDiv.append(buttonDiv)
 }
-
 function chooseCharacters(char){
-        if($CHARS.length < 17){
+        if($CHARS.length < 16 ){
             $CHARS.push(char)
+            fillCharacter(char)
         }     
     }
+    
+    
+    const beginButtonArea = document.createElement('div')
+    const outerBeginMenu = document.querySelector('.outer-begin-menu')
+    const beginMenu = document.createElement('div')
+    beginMenu.className = "begin-menu-panel"
+    const beginButton = document.createElement('button')
+    beginButtonArea.className = "charOptionsSelect"
+    
+    outerBeginMenu.appendChild(beginMenu)
+    beginButtonArea.appendChild(beginButton)
+    beginButton.innerText = "BEGIN"
+    outerBeginMenu.appendChild(beginButtonArea)
+
+    function fillCharacter(char){
+        let charCard2 = document.createElement('div')
+        let cname = document.createElement('p')
+        let pic = document.createElement('img')
+        
+        charCard2.id = char.id
+        charCard2.className = "charSelectCard"
+        cname.textContent = char.name
+        pic.src = `public/${char.image}`
+        charCard2.append(cname, pic)
+        beginMenu.appendChild(charCard2)
+        // if($CHARS.length === 16){
+            beginButton.addEventListener('click', () =>{
+                document.body.removeChild(outerBeginMenu)
+                document.body.removeChild(outerImagesDiv)
+            })
+        // }
+    }
+
+// post character select aka session mode
+
+
