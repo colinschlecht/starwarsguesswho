@@ -135,7 +135,7 @@ img {
 }
 
 .outer-char-bio-panel{
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.331);
   display: flex;
   min-width: 32.5em;
   min-height:40em;
@@ -144,7 +144,7 @@ img {
 
 .outer-mystery-panel{
   display: flex;
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.345);
   min-width: 30em;
   min-height:40em;
        
@@ -153,27 +153,37 @@ img {
 .outer-scratch-panel{
   min-height:40em;
   min-width: 32.5em;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.379);
   display: flex;
 
 }
 
 .outer-left-div{
-  background-color: brown;
+  background-color: rgba(165, 42, 42, 0.392);
   display: flex;
+  max-height: 25em;
   min-height: 25em;
+  max-width:10em;
   min-width:10em;
 }
 .outer-character-display-panel{
-  min-height: 25em;
-  display: flex;
   background-color: rgba(165, 98, 98, 0.153);
+  background-repeat: inherit;
+  max-width: 85em;
+  min-height: 25em;
   min-width: 75em;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-around;
 } 
 .outer-right-div{
-  background-color: brown;
+  background-color: rgba(165, 42, 42, 0.393);
   display: flex;
-  min-height: 25em;
+  max-height: 25em;
+  max-width:10em;
   min-width:10em;
 
 }

@@ -1,6 +1,6 @@
 // global variable for game session character collection
 let $CHARS = []
-$CHARS.id = 1
+
 
 const pre = document.querySelector('#pre-session')
 const main = document.querySelector("#session-main")
@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
 })
-
-// notes - perhaps change this and the menu to be displayed at page load, 
-//then load the cards to the divs when clicked
 
 
 // pre-game character selection display
@@ -93,6 +90,7 @@ function displayCharOptions(charList, optionsArray){
     buttonDiv.append(first, second, third, fourth)
     imagesDiv.append(buttonDiv)
 }
+
 function chooseCharacters(char){
         if($CHARS.length < 16 ){
             $CHARS.push(char)
@@ -104,14 +102,21 @@ function chooseCharacters(char){
     const beginButtonArea = document.createElement('div')
     const outerBeginMenu = document.querySelector('.outer-begin-menu')
     const beginMenu = document.createElement('div')
-    beginMenu.className = "begin-menu-panel"
     const beginButton = document.createElement('button')
-    beginButtonArea.className = "charOptionsSelect"
     
     outerBeginMenu.appendChild(beginMenu)
     beginButtonArea.appendChild(beginButton)
-    beginButton.innerText = "BEGIN"
     outerBeginMenu.appendChild(beginButtonArea)
+    
+    beginButton.innerText = "BEGIN"
+    beginMenu.className = "begin-menu-panel"
+    beginButtonArea.className = "charOptionsSelect"
+    
+    beginButton.addEventListener('click', () =>{
+            pre.style.display = "none"
+            main.style.display = "flex"
+            fillCharacterTray()
+        })
 
     function fillCharacter(char){
         let charCard2 = document.createElement('div')
@@ -125,13 +130,40 @@ function chooseCharacters(char){
         charCard2.append(cname, pic)
         beginMenu.appendChild(charCard2)
         // if($CHARS.length === 16){
-            beginButton.addEventListener('click', () =>{
-                pre.style.display = "none"
-                main.style.display = "flex"
-            })
-        // }
-    }
+            // }
+        }
+
+    
 
 // post character select aka session mode
 
+const innerCharTray = document.querySelector('.inner-character-display-panel')
 
+const outerLeft = document.querySelector('.outer-left-div')
+const outerRight = document.querySelector('.outer-right-div')
+const innerLeft = document.querySelector('.inner-left-div')
+const innerRight = document.querySelector('.inner-right-div')
+
+const outerCharTray = document.querySelector('.outer-character-display-panel')
+
+function fillCharacterTray(){
+    
+    for (let char of $CHARS){
+        let charCard3 = document.createElement('div')
+        let cname = document.createElement('p')
+        let pic = document.createElement('img')
+
+        charCard3.id = char.id
+        charCard3.className = "charSelectCard"
+        cname.textContent = char.name
+        pic.src = `public/${char.image}`
+
+        charCard3.append(cname, pic)
+        outerCharTray.appendChild(charCard3)
+    }
+
+}
+
+
+
+        
