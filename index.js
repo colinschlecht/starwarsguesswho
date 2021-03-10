@@ -2,6 +2,12 @@
 let $CHARS = []
 $CHARS.id = 1
 
+const pre = document.querySelector('#pre-session')
+const main = document.querySelector("#session-main")
+main.style.display = "none"
+
+
+
 // on page load - call is made to db and character options are loaded
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -26,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayCharOptions(CHARDISPLAY1, optionsArray)
     }
     fetchAll()
+
     
 })
 
@@ -119,8 +126,8 @@ function chooseCharacters(char){
         beginMenu.appendChild(charCard2)
         // if($CHARS.length === 16){
             beginButton.addEventListener('click', () =>{
-                document.body.removeChild(outerBeginMenu)
-                document.body.removeChild(outerImagesDiv)
+                pre.style.display = "none"
+                main.style.display = "flex"
             })
         // }
     }
