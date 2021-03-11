@@ -144,7 +144,7 @@ body{
   display: none;
 }
 
-input#un-mute {
+/* input#un-mute {
   display: none;
 }
 
@@ -158,7 +158,7 @@ input#un-mute:checked ~ .unmute img {
 
 input#un-mute:checked ~ .mute img {
   display: none;
-}
+} */
 
 /* The Modal (background) */
 .modal {

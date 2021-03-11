@@ -32,7 +32,6 @@ window.addEventListener('load', () => {
     }
     fetchAll()
     
-    
     modal.style.display = "block";
 })
 
@@ -42,19 +41,16 @@ btn.onclick = function() {
   
 }
 
-var un_mute = document.getElementById('un-mute');
 
-un_mute.onclick = function() {
-   alert('toggle player here');
-};
-
+//on first dom interaction - play music
 const audio = document.querySelector("#play")
 window.addEventListener("click", ()=>{
     audio.play()
+    audio.volume = 0.2
 })
 
 
-// global variable for game session character collection
+
 let $CHARS = []
 
 
