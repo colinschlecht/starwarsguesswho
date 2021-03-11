@@ -1,14 +1,22 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <!-- <link rel="stylesheet" href="base_css.css"> -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
-    <title>Starwars Things!</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <!-- <link rel="stylesheet" href="base_css.css"> -->
+        <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+        <title>Starwars Things!</title>
+    </head>
+    <body>
+        
+        <input type="checkbox" name="un-mute" id="un-mute">
+        <label for="un-mute" class="unmute">
+            <img src="speaker_icon.jpg" alt="Mute_Icon.svg" title="Mute icon">
+        </label>
+        <label for="un-mute" class="mute">
+            <img src="Speaker_Icon.svg" alt="Speaker_Icon.svg" title="Unmute/speaker icon">
+        </label>
     <!--- page load / character select --->
     <div id="wrapper">
         <div id='stars'></div>
@@ -18,28 +26,77 @@
         <div id='stars'></div>
         <div id='stars3'></div>
     </div>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
         
-        <!-- <div id="pre-session">
-            <div class = "outer-images"></div>
-            <div class = "outer-begin-menu"></div>
-        </div> -->
-        <!----- main session screen ----->
-        <div id="session-main">
-            <div class="session-top">
-                <div class = "outer-char-bio-panel"></div>
-                <div class = "outer-mystery-panel">
-                    <!-- <img id="holo" src="holo1-cutout1.png"> -->
-                </div>
-                <div class = "outer-scratch-panel"></div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h1> Star Wars Guess Who</h1>
+            <ul>
+                <li> Welcome to Star Wars Guess Who </li>
+                <li> Select 16 characters from the left-character display menu to continue </li>
+                <li> Click on each desired character picture to add to the selected character menu on the right</li>
+                <li> Each chosen character has a set of descriptive attributes </li>
+                <li> Once the game begins, you a mystery character will be selected from your collection</li>
+                <li> Your mission is guess the mystery character by guessing their name </li>
+                <li> You will need to ask qustions specific to character traits to rule out non-mystery characters</li>
+                <li> May the force be with you!</li>
+            </ul>
+            <button class="close"></button>
+        </div>
+        
+    </div>
+    
+    <div id="pre-session">
+        <div class = "outer-images"></div>
+        <div class = "outer-begin-menu"></div>
+    </div>
+    <!----- main session screen ----->
+    
+    <div id="myModal2" class="modal2">
+        
+        <!-- Modal content -->
+        <div class="modal-content2">
+            <h1> Instructions:</h1>
+            <ul>
+                <li> The questions below are organized by category </li>
+                <li> Use the arrow up and down keys to choose what qustion you would like to ask, left and right arrow keys to choose the category, and space bar to ask the selected question </li>
+                <li> The answer will appear in the questions pane on the right, along with previously asked questions</li>
+                <li> You can click each character card to flip them over if you feel that you can rule that character out</li>
+                <li> Hovering over each character card will highlight their character traits. </li>
+                <li> May the force be with you!</li>
+            </ul>
+            <button class="close2"></button>
+        </div>
+        
+    </div>
+    <div id="session-main">
+        <div class="session-top">
+            <div class = "outer-char-bio-panel"></div>
+            <div class = "outer-mystery-panel">
+                <!-- <img id="holo" src="holo1-cutout1.png"> -->
             </div>
-            <div class ="session-bottom">
-                <div class="outer-left-div"></div>
-                <div class = "outer-character-display-panel"></div>
-                <div class="outer-right-div"></div>
+            <div class = "outer-scratch-panel"></div>
+            <div class = "outer-questions-panel"></div>
+        </div>
+        <div class ="session-bottom">
+            <div class="outer-left-div">
+                <button class ="left"></button>
+            </div>
+            
+            <div class = "outer-character-display-panel"></div>
+            <div class="outer-right-div">
+                <button class ="right"></button>
             </div>
         </div>
-
-    <!-- <script src="index.js"></script> -->
-    <script src="new.js"></script>
+    </div>
+    
+    <audio controls autoplay id="play">
+        <source src="ebonhawk.mp3" type="audio/mpeg"> 
+        Your browser does not support the audio tag.
+       </audio>
+    <script src="index.js"></script>
+    <!-- <script src="new.js"></script> -->
 </body>
 </html>

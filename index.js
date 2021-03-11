@@ -1,16 +1,14 @@
-// global variable for game session character collection
-let $CHARS = []
 
-
-const pre = document.querySelector('#pre-session')
-const main = document.querySelector("#session-main")
-main.style.display = "none"
+// Get the modal
+var modal = document.getElementById("myModal");
 
 
 
-// on page load - call is made to db and character options are loaded
-document.addEventListener("DOMContentLoaded", () => {
-    
+// Get the <span> element that closes the modal
+var btn = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal and load characters
+window.addEventListener('load', () => {
     const charsURL = "http://localhost:3000/characters"
     
     function fetchAll(){
@@ -30,12 +28,90 @@ document.addEventListener("DOMContentLoaded", () => {
         CHARDISPLAY4.id = 4
         optionsArray = [CHARDISPLAY1, CHARDISPLAY2, CHARDISPLAY3, CHARDISPLAY4]
         displayCharOptions(CHARDISPLAY1, optionsArray)
+        seedCategories(CHARDISPLAY1)
     }
     fetchAll()
-
     
+    
+    modal.style.display = "block";
 })
 
+// When the user clicks on <span> (x), close the modal
+btn.onclick = function() {
+  modal.style.display = "none";
+  
+}
+
+var un_mute = document.getElementById('un-mute');
+
+un_mute.onclick = function() {
+   alert('toggle player here');
+};
+
+const audio = document.querySelector("#play")
+window.addEventListener("click", ()=>{
+    audio.play()
+})
+
+
+// global variable for game session character collection
+let $CHARS = []
+
+
+const pre = document.querySelector('#pre-session')
+const main = document.querySelector("#session-main")
+main.style.display = "none"
+
+
+
+// on page load - call is made to db and character options are loaded
+//temporarily moved to window load
+// document.addEventListener("DOMContentLoaded", () => {
+    
+//     const charsURL = "http://localhost:3000/characters"
+    
+//     function fetchAll(){
+//         fetch(charsURL)
+//         .then(resp => resp.json())
+//         .then(megaList => load(megaList))
+//     }  
+    
+//     function load(megaList){
+//         let CHARDISPLAY1 = megaList.slice(0,20)
+//         CHARDISPLAY1.id = 1
+//         let CHARDISPLAY2 = megaList.slice(21,41)
+//         CHARDISPLAY2.id = 2
+//         let CHARDISPLAY3 = megaList.slice(42,62)
+//         CHARDISPLAY3.id = 3
+//         let CHARDISPLAY4 = megaList.slice(63,81)
+//         CHARDISPLAY4.id = 4
+//         optionsArray = [CHARDISPLAY1, CHARDISPLAY2, CHARDISPLAY3, CHARDISPLAY4]
+//         displayCharOptions(CHARDISPLAY1, optionsArray)
+//         seedCategories(CHARDISPLAY1)
+//     }
+//     fetchAll()
+
+    
+// })
+
+function seedCategories(CHARDISPLAY1){
+    let seederQs = CHARDISPLAY1[0].questions
+    for(let q of seederQs){
+        categories.push(q.category)
+    }
+}
+
+const removeDuplicateCats = (categories) => {
+    const flag = [];
+    const unique = [];
+    categories.forEach(elem => {
+        if(!flag[elem.name]){
+            flag[elem.name] = true;
+            unique.push(elem);
+        }
+    })
+    return unique;
+}
 
 // pre-game character selection display
 
@@ -163,7 +239,6 @@ function fillCharacterTray(){
     }
 
 }
-
 
 
         

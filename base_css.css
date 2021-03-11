@@ -1,26 +1,16 @@
-/* page load */
+/* ----------------------------------- character selection (dom content loaded) ------------------------------------------ */
 
-body{
-    display: flex;
-    align-items: center;
-}
-
-
-/*character selection*/
-
-#pre-session {
-    
+/* pre-session div encompases the entirety of both character selections */
+#pre-session { 
     display:flex;
     position: fixed;
-}
-.outer-images {
+  }
+  .outer-images {
     display: flex;
     width: 600px;
     height: 1235px;
-    /* align-items: center;
-    justify-content: center; */
-}
-.images {
+  }
+  .images {
     width: 600px;
     height: 1235px;
     display: flex;
@@ -29,8 +19,8 @@ body{
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
-}
-.charSelectCard {
+  }
+  .charSelectCard {
     box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
     border-radius: 6px;
     padding: 10px;
@@ -40,22 +30,22 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-	flex-direction: column;
-	/* flex-wrap: wrap; */
-	justify-content: space-around;
-	align-items: center;
-	align-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
     margin-top: 2px;
-}
-img {
+  }
+  img {
     box-shadow:20px red;
     border-radius: 6px;
     height: 100px;
     margin-bottom: 50px;
     /* padding: 5px; */
-}
-/* button div */
-#charOptionsSelect{
+  }
+  
+  /*--------- button div --------*/
+  #charOptionsSelect{
     /* width: 100%; */
     display: flex;
     flex-direction: row;
@@ -63,23 +53,21 @@ img {
     justify-content: center;
     align-items: center;
     align-content: space-around;
-}
-.charSelectButtons{
+  }
+  .charSelectButtons{
     margin: 5px;
-}
-
-/* begin menu (selected characters) */
-.outer-begin-menu{
+  }
+  
+  /* begin menu (selected characters) */
+  .outer-begin-menu{
     height: 1235px;
     display: flex;
-    /* max-width: 600px; */
     flex-direction: column;
-}
-
-.begin-menu-panel{
+  }
+  
+  .begin-menu-panel{
     height: 1235px;
     display: flex;
-    /* max-width: 400px; */
     width: 600px;
     display: flex;
     flex-direction: row;
@@ -88,102 +76,145 @@ img {
     align-items: center;
     align-content: space-around;
     background-color: aqua;
-}
-
-/* ---------- main session ------------- */
-#session-main{
+  }
+  
+  /* ----------------------------------- main session ------------------------------------------ */
+  
+  /* session-main div encompases the entirety of both character selections */
+  
+  #session-main{
     position: fixed;
-    left: 50%;
-    margin:auto;
+    margin: auto;
     max-height: fit-content;
     max-width: fit-content;
     display: flex;
-    
     flex-wrap: wrap;
     flex-direction: column;
     border:1px solid;
-
-}
-.session-top{
+  
+  }
+  .session-top{
     display: flex;
-    max-height: 100em;
     min-height:40em;
-    max-width: 200em;
     min-width:80em;
-    
     border:1px solid;
-    /* display: flex;
-	/* flex-direction: row; */
-	flex-wrap: wrap;
-	/* justify-content: center; */
-	/* align-items: stretch; */
-	/* align-content: flex-start; */ 
-	
-}
-.session-bottom{
+  
+  }
+  .session-bottom{
     display: flex;
-    max-height: 100em;
     min-height:25em;
-    max-width: 200em;
     min-width:80em;
-   
     border:1px solid;
-    /* display: flex;
-	/* flex-direction: row; */
-	flex-wrap: wrap;
-	/* justify-content: center; */
-	/* align-items: stretch; */
-	/* align-content: flex-start; */ 
-}
-
-
- .outer-char-bio-panel{
-    background-color: grey;
+  
+  }
+  
+  .outer-char-bio-panel{
+    background-color: rgba(128, 128, 128, 0.331);
     display: flex;
     min-width: 32.5em;
-    max-height: 40em;
     min-height:40em;
    
- }
- 
- .outer-mystery-panel{
-         display: flex;
-         background-color: blue;
-         min-width: 30em;
-         max-height: 40em;
-         min-height:40em;
+  }
+  
+  .outer-mystery-panel{
+    display: flex;
+    background-color: rgba(0, 0, 255, 0.345);
+    min-width: 30em;
+    min-height:40em;
          
-      }
+  }
      
-     .outer-scratch-panel{
-         max-height: 30em;
-         min-height:40em;
-         min-width: 32.5em;
-         background-color: grey;
-         display: flex;
-
-        }
-
-        .outer-left-div{
-            background-color: brown;
-            display: flex;
-            min-height: 25em;
-            min-width:10em;
-        }
-        .outer-character-display-panel{
-            
-                min-height: 25em;
-                display: flex;
-                background-color: rgba(165, 98, 98, 0.153);
-                min-width: 75em;
-             } 
-        .outer-right-div{
-            background-color: brown;
-            display: flex;
-            min-height: 25em;
-            min-width:10em;
-
-        }
-
-
-    
+  .outer-scratch-panel{
+    min-height:40em;
+    min-width: 32.5em;
+    background-color: rgba(128, 128, 128, 0.379);
+    display: flex;
+  
+  }
+  
+  .outer-left-div{
+    background-color: rgba(165, 42, 42, 0.392);
+    display: flex;
+    max-height: 25em;
+    min-height: 25em;
+    max-width:10em;
+    min-width:10em;
+  }
+  .outer-character-display-panel{
+    background-color: rgba(165, 98, 98, 0.153);
+    background-repeat: inherit;
+    max-width: 85em;
+    min-height: 25em;
+    min-width: 75em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+  } 
+  .outer-right-div{
+    background-color: rgba(165, 42, 42, 0.393);
+    display: flex;
+    max-height: 25em;
+    max-width:10em;
+    min-width:10em;
+  
+  }
+  
+  .inner-char-traits-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* carCard_.className = "card"
+  charCardInner.className = "card_inner"
+  charCard3.className = "face-back"
+  charCard3Back.className = "face-front" */
+  
+  /* perspective */
+  .card {
+    margin: 100px auto 0;
+    height:150;
+    width: 150;
+  
+  }
+  
+  /*flipping*/
+  .card_inner{
+    height:100%;
+    width: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+  .card_inner.is-flipped{
+    transform: rotateY(180deg);
+  }
+  
+  .face-front {
+    position: absolute;
+    backface-visibility: hidden;
+    overflow:hidden;
+    box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
+    border-radius: 6px;
+    padding: 10px;
+    height:100%;
+    width: 100%;
+    background-image: url(card2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    margin-top: 2px;
+  }
+  .face-back {
+   background-color: var(--light);
+   transform: rotaty;
+  }
+  
