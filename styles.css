@@ -362,6 +362,10 @@ img {
   min-width: 30em;
   min-height:30em;
 }
+
+.mystery-categories h5 {
+  color: white;
+}
 /*------------- mystery character area ----------------*/
 .outer-mystery-panel{
   display: flex;
@@ -451,6 +455,10 @@ img {
   min-width: 75em;
   max-height: 5em;
   min-height: 5em;
+}
+
+.outer-questions-panel li{
+  color: white;
 }
 
 /*----------------------------------- bottom half of main div------------------------------------ */

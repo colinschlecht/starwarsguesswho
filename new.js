@@ -65886,11 +65886,11 @@ function generateQuestionaire(){
        let questionUL = document.createElement('ul')
        questionUL.id = c.id
        questionUL.className = c.name
-       questionUL.style.display = "none"
        outerQP.append(questionUL)
        for(let q of questions){
            if(c.id === q.category.id){
             let li = document.createElement('li')
+            li.style.display = "none"
             li.id = q.id
             q.className = q.attribute_desc
             li.textContent = q.question
@@ -65906,7 +65906,7 @@ let QLB = document.querySelector(".left")
 let QRB = document.querySelector(".right")
 
 let ULLIST = [...document.querySelectorAll(".outer-questions-panel ul")]
-
+ULLIST.shift()
 
 QLB.addEventListener('click', () => {
 handleCLBC()})
@@ -65937,63 +65937,60 @@ switch (event.keyCode) {
         };
         
 
+
 function handleCLBC(){
-    qnum = 0
     if(cnum > 0){
         cnum --
     } else {
         cnum = uniqCats.length -1
     }
     
-    displayCat(cnum)
-    displayQuest(qnum)
+   
+    displayCategory()
 }
 function handleCRBC(){
-    qnum = 0
     if(cnum < uniqCats.length -1){
         cnum ++
     } else {
         cnum = 0
     }
     
-    displayCat(cnum)
-    displayQuest(qnum)
+    displayCategory()
 }
 // question up
 function handleQUBC(){
-    qnum = 0
     if(qnum > 0){
         qnum --
     } else {
-        qnum = ULLIST.length -1
+        qnum = ULLIST[cnum].querySelectorAll('li').length -1
     }
-    displayQuest(qnum)
+    displayQuestion()
 }
 // question down
 function handleQDBC(){
-    qnum = 0
-    if(qnum < ULLIST.length -1){
+    if(qnum < ULLIST[cnum].querySelectorAll('li').length -1){
         qnum ++
     } else {
         qnum = 0
     }
-    displayQuest(qnum)
+    displayQuestion()
+    
 }
 
-    
-function displayCat(cnum){
+function displayCategory(){
     catDiv.querySelector('h5').remove()
     let displayedCat = document.createElement('h5')
+
     displayedCat.innerText = uniqCats[cnum].name
     displayedCat.className = "cat"
     catDiv.appendChild(displayedCat)
-    
-    
+       
+}
+function displayQuestion(){
+    console.log(ULLIST[cnum].querySelectorAll('li')[qnum].style.display ="block")
 }
 
-function displayQuest(qnum){
 
-}
 
 
 
