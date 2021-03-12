@@ -353,14 +353,27 @@ img {
   min-height:30em;
  
 }
+/*------------- mystery categories area ----------------*/
 
+.mystery-categories{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 255, 0.345);
+  min-width: 30em;
+  min-height:30em;
+}
 /*------------- mystery character area ----------------*/
 .outer-mystery-panel{
   display: flex;
   background-color: rgba(0, 0, 255, 0.345);
-  min-width: 30em;
-  min-height:30em;
-       
+  min-width: 29em;
+  min-height: 25em;
+}
+
+/*---------------------------- categories ---------------------------*/
+.couter-categories {
+  min-width:29em;
+  min-height:4.5em;
 }
 
 /*------ mystery character card ------*/

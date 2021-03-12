@@ -65701,7 +65701,8 @@ let uniqCats =[
 
 
 
-
+let cnum = 0
+let qnum = 0
 
 
 const innerCharTray = document.querySelector('.inner-character-display-panel')
@@ -65720,6 +65721,19 @@ outerCharTraits.appendChild(innerCharTraits)
 const outerMysteryPanel = document.querySelector(".outer-mystery-panel")
 const outerQP = document.querySelector(".outer-questions-panel")
 
+
+let catDiv = document.querySelector('.outer-categories')
+
+let tempUL = document.createElement('ul')
+let tempLi = document.createElement('li')
+outerQP.appendChild(tempUL)
+tempLi.innerText = "PRESS ARROW KEY TO CHANGE CATEGORY/QUESTION, SPC TO SELECT"
+tempUL.appendChild(tempLi)
+
+let temph5 = document.createElement('h5')
+temph5.innerText = "Categories"
+temph5.className ="cat"
+catDiv.appendChild(temph5)
 
 document.addEventListener("DOMContentLoaded", fillCharacterTray())
 function fillCharacterTray(){
@@ -65884,13 +65898,14 @@ function generateQuestionaire(){
            };
        };
     };
-        
+    
     
 } 
 
 let QLB = document.querySelector(".left")
 let QRB = document.querySelector(".right")
-let ULLIST = ["PRESS ARROW KEY TO CHANGE CATEGORY/QUESTION, SPC TO SELECT", ...document.querySelectorAll(".outer-questions-panel ul")]
+
+let ULLIST = [...document.querySelectorAll(".outer-questions-panel ul")]
 
 
 QLB.addEventListener('click', () => {
@@ -65921,28 +65936,21 @@ switch (event.keyCode) {
             }
         };
         
-let cnum = 0
-let qnum = 0
+
 function handleCLBC(){
-    if(typeof ULLIST[0] === "string"){
-        ULLIST.shift()
-    }
     qnum = 0
     if(cnum > 0){
         cnum --
     } else {
-        cnum = ULLIST.length -1
+        cnum = uniqCats.length -1
     }
     
     displayCat(cnum)
     displayQuest(qnum)
 }
 function handleCRBC(){
-    if(typeof ULLIST[0] === "string"){
-        ULLIST.shift()
-    }
     qnum = 0
-    if(cnum < ULLIST.length -1){
+    if(cnum < uniqCats.length -1){
         cnum ++
     } else {
         cnum = 0
@@ -65953,6 +65961,7 @@ function handleCRBC(){
 }
 // question up
 function handleQUBC(){
+    qnum = 0
     if(qnum > 0){
         qnum --
     } else {
@@ -65962,6 +65971,7 @@ function handleQUBC(){
 }
 // question down
 function handleQDBC(){
+    qnum = 0
     if(qnum < ULLIST.length -1){
         qnum ++
     } else {
@@ -65972,20 +65982,19 @@ function handleQDBC(){
 
     
 function displayCat(cnum){
-    console.log(cnum)
-    console.log(ULLIST[cnum])
+    catDiv.querySelector('h5').remove()
+    let displayedCat = document.createElement('h5')
+    displayedCat.innerText = uniqCats[cnum].name
+    displayedCat.className = "cat"
+    catDiv.appendChild(displayedCat)
+    
+    
 }
 
 function displayQuest(qnum){
-    console.log(qnum)
-    console.log(ULLIST[qnum])
+
 }
 
-//arrow keys
-// left = 37
-// up = 38
-// right = 39
-// down = 40
 
 
-//do the same as above for questions
+
