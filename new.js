@@ -65710,7 +65710,7 @@ const outerRight = document.querySelector('.outer-right-div')
 const innerLeft = document.querySelector('.inner-left-div')
 const innerRight = document.querySelector('.inner-right-div')
 const outerCharTray = document.querySelector('.outer-character-display-panel')
-
+const outerScratchPanel = document.querySelector('.outer-scratch-panel')
 const outerCharTraits = document.querySelector('.outer-char-bio-panel')
 const innerCharTraits = document.createElement('div')
 
@@ -65727,7 +65727,7 @@ let questionUL = document.createElement('ul')
 let questionLI = document.createElement('li')
 questionLI.className ="question"
 outerQP.appendChild(questionUL)
-questionLI.innerText = "PRESS ARROW KEY TO CHANGE CATEGORY/QUESTION, SPC TO SELECT"
+questionLI.innerText = "PRESS ARROW KEY TO CHANGE CATEGORY/QUESTION, ENTER TO SELECT"
 questionUL.appendChild(questionLI)
 
 let temph5 = document.createElement('h5')
@@ -65879,33 +65879,12 @@ function generateQuestionaire(){
 
 // const uniqCats = removeDuplicateCats(categories); keep
 
-//  function fillQuestions() {
-     
-//     for(let c of uniqCats){
-//        let questionUL = document.createElement('ul')
-//        questionUL.id = c.id
-//        questionUL.className = c.name
-//        outerQP.append(questionUL)
-//     //    for(let q of questions){
-//     //        if(c.id === q.category.id){
-//     //         let li = document.createElement('li')
-//     //         li.style.display = "none"
-//     //         li.id = q.id
-//     //         q.className = q.attribute_desc
-//     //         li.textContent = q.question
-//     //         questionUL.appendChild(li)
-//     //        };
-//     //    };
-//     };
-    
-    
-// } 
+
 
 let QLB = document.querySelector(".left")
 let QRB = document.querySelector(".right")
 
-// let ULLIST = [...document.querySelectorAll(".outer-questions-panel ul")]
-// ULLIST.shift()
+
 
 QLB.addEventListener('click', () => {
 handleCLBC()})
@@ -65914,26 +65893,7 @@ handleCRBC()})
 
 
 
-// document.onkeydown = function(event) {
-// switch (event.keyCode) {
-//     case 37:
-//             handleCLBC()
-//         // alert('Left key pressed');
-//         break;
-//     case 38:
-//         handleQUBC()
-//         // alert('Up key pressed');
-//         break;
-//         case 39:
-//             handleCRBC()
-//             // alert('Right key pressed');
-//             break;
-//             case 40:
-//                 handleQDBC()
-//                 // alert('Down key pressed');
-//                 break;
-//             }
-//         };
+
     
 window.addEventListener("keydown", function (event) {
     if (event.defaultPrevented) {
@@ -65953,13 +65913,11 @@ window.addEventListener("keydown", function (event) {
       case "ArrowRight": handleCRBC()
         // Do something for "right arrow" key press.
         break;
-    //   case "Enter":
-        // Do something for "enter" or "return" key press.
+      case "Enter": handleAsk() 
+      break;
+      case "SpaceBar": console.log("space")
         break;
-    //   case "Esc": // IE/Edge specific value
-    //   case "Escape":
-        // Do something for "esc" key press.
-        // break;
+   
       default:
         return; // Quit when this doesn't handle the key event.
     }
@@ -65988,46 +65946,7 @@ function handleCRBC(){
     
     displayCategory()
 }
-// // question up
-// function handleQDBC(){
-//     let gnum = 0
-//     let newList = ULLIST[cnum].querySelectorAll('li')
-//     if(qnum === 0){
-//         qnum = ULLIST[cnum].querySelectorAll('li').length -1
-//         // gnum = qnum
-//         // displayQuestion(gnum)
-//         newList[newList.length-1].style.display = 'block'
-//         newList[0].style.display = 'none'
-//     } else {
-//         qnum--
-//         // gnum = qnum
-//         // displayQuestion(gnum)
-//         newList[qnum].style.display = 'block'
-//         newList[qnum+1].style.display = 'none'
-//     }
-// }
-// // question down
-// function handleQUBC(){
-//     let newList = ULLIST[cnum].querySelectorAll('li')
-//     let gnum = 0
-//     if(qnum < ULLIST[cnum].querySelectorAll('li').length -1){
-//         qnum++
-//         // gnum = qnum
-//         // console.log(qnum)
 
-//         // displayQuestion(gnum)
-//         newList[qnum].style.display = 'block'
-//         newList[qnum-1].style.display = 'none'
-//     } else {
-//         // console.log(qnum)
-//         qnum = 0
-//         // console.log(qnum)
-//         // displayQuestion(gnum)
-//         newList[qnum].style.display = 'block'
-//         newList[newList.length-1].style.display = 'none'
-//     }
-    
-// }
 
 function displayCategory(){
     catDiv.querySelector('h5').remove()
@@ -66038,21 +65957,6 @@ function displayCategory(){
     catDiv.appendChild(displayedCat)
        
 }
-
-function displayQuestion(gnum){
-
-//    ULLIST[cnum].querySelectorAll('li')[qnum].style.display ="block"
-let newlist = ULLIST[cnum].querySelectorAll('li')
-newlist[gnum].style.display="block"
-newlist[gnum-1].style.display="none"
-// console.log(newlist)
-
-}
-
-
-
-
-
 
 
 //-----return 16 questions for name specific to your chars
@@ -66473,3 +66377,116 @@ function handleQDBC(){
 
 }
 
+function handleAsk(){
+    let ask = document.querySelector(".question")
+    let question = questions.find(question => question.id == ask.id)
+    questionControlFlow(question)
+}
+
+function questionControlFlow(question){
+    let answer = false
+    switch (question.category.id) {
+        case 1:
+          if(mysteryCharacter.name == question.attribute_desc) {
+              answer = true
+          }
+          break;
+        case 2:
+            if(mysteryCharacter.gender == question.attribute_desc) {
+            answer = true
+        }
+          break;
+        case 3:
+            if(mysteryCharacter.skin_tone == question.attribute_desc) {
+            answer = true
+        }
+          break;
+        case 4:
+            if(question.attribute_desc === 0 && mysteryCharacter.height === 0){
+                answer = true
+            } else {
+                if(question.attribute_desc == 100 && mysteryCharacter.height <= 100){
+                    answer = true
+                } else {
+                    if(question.attribute_desc == 200 && mysteryCharacter.height >= 200){
+                        answer = true
+                    }
+                }}
+        break;
+        case 5:
+            if(mysteryCharacter.eye_color == question.attribute_desc) {
+                answer = true
+            }
+          break;
+        case 6:
+            if(mysteryCharacter.hair_color == question.attribute_desc) {
+                answer = true
+            }
+          break;
+        case 7:
+            if(question.attribute_desc === 0 && mysteryCharacter.mass === 0){
+                answer = true
+            } else {
+                if(question.attribute_desc == 50 && mysteryCharacter.mass < 50){
+                    answer = true
+                } else {
+                    if(question.attribute_desc == 75 && mysteryCharacter.mass >= 75){
+                        answer = true
+                    }
+                }}
+          break;
+        case 8:
+            if(mysteryCharacter.homeworld.name == question.attribute_desc) {
+                answer = true
+            }
+          break;
+        case 9:
+            if(mysteryCharacter.species.name == question.attribute_desc) {
+                answer = true
+            }
+          break;
+        case 10:
+            if(question.attribute_desc === 0 && mysteryCharacter.birth_year === 0){
+                answer = true
+            } else if(question.attribute_desc == 50 && mysteryCharacter.birth_year <= 50){
+                    answer = true
+            } else if(question.attribute_desc == 100 && mysteryCharacter.birth_year <= 100){
+                        answer = true
+                    }
+                
+          break;
+        default:
+          return; // Quit when this doesn't handle the key event.
+      }
+      handleAnswer(answer, question)
+}
+
+
+
+function handleAnswer(answer, question){
+    const scratchQ = document.createElement('p')
+    const scratchA = document.createElement('p')
+    
+    scratchQ.innerText = `Q: ${question.question}`
+
+    // if(answer == true){
+    //     scratchA.innerText = "Hello There!"
+    // } else {
+    //     scratchA.innerText = "* visible confustion *"
+    // }
+
+    outerScratchPanel.append(scratchQ, scratchA)
+    console.log(question)
+    console.log(answer)
+    //if known eye color, reverse answer
+
+    //for number questions, unknown is less than all. change that.
+}
+
+// if(answer === true){
+//     scratchA.innerText = "Hello There!"
+// } else if (answer === false && question.attribute_desc == 0) {
+//     scratchA.innerText = "Hello There!"
+// } else {
+//     scratchA.innerText = "* visible confustion *"
+// }
