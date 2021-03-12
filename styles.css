@@ -130,6 +130,7 @@ body{
   }
 }
 
+
 @keyframes animStar {
   from {
     transform: translateY(0px);
@@ -163,6 +164,11 @@ input#un-mute:checked ~ .mute img {
 } */
 
 /* The Modal (background) */
+
+.modal button{
+  display: none;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -502,6 +508,12 @@ img {
   height: 300px;
   width:100px; 
   border-radius: 20px 0px 0px 20px;
+}
+.outer-left-div button{
+  display: none;
+}
+.outer-right-div button{
+  display: none;
 }
 .outer-right-div{
   /* background-color: rgba(165, 42, 42, 0.393); */

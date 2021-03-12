@@ -1,3 +1,5 @@
+
+
 let mysteryCharacter = {}
 const questions = []
 let categories = []
@@ -11,6 +13,7 @@ var btn = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal and load characters
 window.addEventListener('load', () => {
+
     const charsURL = "http://localhost:3000/characters"
     
     function fetchAll(){
@@ -49,6 +52,7 @@ const audio = document.querySelector("#play")
 window.addEventListener("click", ()=>{
     audio.play()
     audio.volume = 0.2
+    modal.style.display = "none";
 })
 
 
@@ -679,7 +683,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
         case 1:
@@ -710,7 +714,7 @@ function handleQUBC(){
                 qnum ++
             } else {
                 qnum = 0
-                // handleQUBC()
+                handleQUBC()
             }
           break;
         case 3:
@@ -725,7 +729,7 @@ function handleQUBC(){
                 qnum ++
             } else {
                 qnum = 0
-                // handleQUBC()
+                handleQUBC()
             }
             break;
             case 4:
@@ -740,7 +744,7 @@ function handleQUBC(){
                     qnum ++
                 } else {
                     qnum = 0
-                    // handleQUBC()
+                    handleQUBC()
             }
             // Do something for "enter" or "return" key press.
             break;
@@ -756,7 +760,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
         case 6:
@@ -771,7 +775,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
         case 7:
@@ -786,7 +790,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
         case 8:
@@ -801,7 +805,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
         case 9:
@@ -816,7 +820,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-            //   handleQUBC()
+              handleQUBC()
           }
           break;
                         
@@ -843,7 +847,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = specificNameQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         case 1:
@@ -858,7 +862,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = genderQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           // Do something for "up arrow" key press.
           break;
@@ -874,7 +878,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
                 qnum --
             } else {
                 qnum = skintoneQuestions.length -1
-                // handleQDBC()
+                handleQUBC()
             }
           break;
         case 3:
@@ -889,7 +893,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
                 qnum --
             } else {
                 qnum = eyeQuestions.length -1
-                // handleQDBC()
+                handleQUBC()
             }
             break;
             case 4:
@@ -904,7 +908,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
                     qnum --
                 } else {
                     qnum = hairQuestions.length -1
-                    // handleQDBC()
+                    handleQUBC()
             }
             // Do something for "enter" or "return" key press.
             break;
@@ -920,7 +924,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = uniqHomeWolrdQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         case 6:
@@ -934,7 +938,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = uniqSpeciesQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         case 7:
@@ -949,7 +953,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = massQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         case 8:
@@ -963,7 +967,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = birthQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         case 9:
@@ -977,7 +981,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
               qnum --
           } else {
               qnum = heightQuestions.length -1
-            //   handleQDBC()
+              handleQUBC()
           }
           break;
         default:
