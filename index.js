@@ -465,6 +465,7 @@ function generateQuestionaire(){
     for(let question of mysteryCharacter.questions){
         questions.push(question)
     }
+    flowQuestions()
 }
 
 // const removeDuplicateCats = (categories) => {
@@ -560,98 +561,98 @@ function displayCategory(){
     catDiv.appendChild(displayedCat)
        
 }
+let genderQuestions = []
+let specificNameQuestions = []
+let speciesQuestions = []
+let specificSpeciesQuestions = []
+let heightQuestions = []
+let hairQuestions = []
+let homeworldQuestions = []
+let specificHomeworldQuestions = []
 
+let eyeQuestions = []
+let skintoneQuestions = []
+let massQuestions = []
+let birthQuestions = []
+let nameQuestions = []
+function flowQuestions(){
 
 //-----return 16 questions for name specific to your chars
-let nameQuestions = []
 for(let q of questions){
     if (q.category.id === 1){
         nameQuestions.push(q)
     }
 }
-let specificNameQuestions = []
 for (let q of nameQuestions){
     for(let c of $CHARS){
         if(c.name === q.attribute_desc){
             specificNameQuestions.push(q)
         }
-      }
     }
+}
 //----------------------------------------
 //------------gender questions-----------//
-let genderQuestions = []
 for(q of questions){
     if(q.category.id === 2){
         genderQuestions.push(q)
-}}
-
-//----- species questions --------//
-let speciesQuestions = []
-for(let q of questions){
-    if (q.category.id === 9){
-        speciesQuestions.push(q)
-    }
-}
-let specificSpeciesQuestions = []
-for (let q of speciesQuestions){
-    for(let c of $CHARS){
-        if(c["species"]["name"] === q.attribute_desc){
-            specificSpeciesQuestions.push(q)
+    }}
+    
+    //----- species questions --------//
+    for(let q of questions){
+        if (q.category.id === 9){
+            speciesQuestions.push(q)
         }
-      }
     }
-    let uniqSpeciesQuestions = [...new Set(specificSpeciesQuestions)];
+    for (let q of speciesQuestions){
+        for(let c of $CHARS){
+            if(c["species"]["name"] === q.attribute_desc){
+                specificSpeciesQuestions.push(q)
+            }
+        }
+    }
     //---------------height-------------------------
-    let heightQuestions = []
     for(let q of questions){
         if (q.category.id === 4){
             heightQuestions.push(q)
         }
     }
     //------------------hair questions----------------------//
-    let hairQuestions = []
-        for(q of questions){
-            if(q.category.id === 6){
-                hairQuestions.push(q)
+    for(q of questions){
+        if(q.category.id === 6){
+            hairQuestions.push(q)
         }}
-    //-----homeworld--------------------//
-let homeworldQuestions = []
-for(let q of questions){
-    if (q.category.id === 8){
-        homeworldQuestions.push(q)
-    }
-}
-let specificHomeworldQuestions = []
-for (let q of homeworldQuestions){
-    for(let c of $CHARS){
-        if(c.homeworld.name === q.attribute_desc){
-            specificHomeworldQuestions.push(q)
+        //-----homeworld--------------------//
+        for(let q of questions){
+            if (q.category.id === 8){
+                homeworldQuestions.push(q)
+            }
         }
-      }
-    }
-
-let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
+        for (let q of homeworldQuestions){
+            for(let c of $CHARS){
+                if(c.homeworld.name === q.attribute_desc){
+                    specificHomeworldQuestions.push(q)
+                }
+            }
+        }
+        
+      
 //--------------------eye color--------------------
-let eyeQuestions = []
 for(q of questions){
     if(q.category.id === 5){
         eyeQuestions.push(q)
 }}
 //----------------skin tone------------------------//
-let skintoneQuestions = []
 for(q of questions){
     if(q.category.id === 3){
         skintoneQuestions.push(q)
     }}
     
  //----------------mass------------------------
- let massQuestions = []
     for(q of questions){
         if(q.category.id === 7){
             massQuestions.push(q)
     }}
  //----------------birth------------------------
- let birthQuestions = []
     for(q of questions){
         if(q.category.id === 10){
             birthQuestions.push(q)
@@ -659,8 +660,11 @@ for(q of questions){
  //----------------------------------------
  //----------------------------------------
 // question up
+}
 
 function handleQUBC(){
+    let uniqSpeciesQuestions = [...new Set(specificSpeciesQuestions)];
+    let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
     li = document.querySelector('.question')
     let max = specificNameQuestions.length
     switch (cnum) {
@@ -675,7 +679,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
         case 1:
@@ -690,7 +694,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           // Do something for "up arrow" key press.
           break;
@@ -706,7 +710,7 @@ function handleQUBC(){
                 qnum ++
             } else {
                 qnum = 0
-                handleQUBC()
+                // handleQUBC()
             }
           break;
         case 3:
@@ -721,7 +725,7 @@ function handleQUBC(){
                 qnum ++
             } else {
                 qnum = 0
-                handleQUBC()
+                // handleQUBC()
             }
             break;
             case 4:
@@ -736,7 +740,7 @@ function handleQUBC(){
                     qnum ++
                 } else {
                     qnum = 0
-                    handleQUBC()
+                    // handleQUBC()
             }
             // Do something for "enter" or "return" key press.
             break;
@@ -752,7 +756,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
         case 6:
@@ -767,7 +771,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
         case 7:
@@ -782,7 +786,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
         case 8:
@@ -797,7 +801,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
         case 9:
@@ -812,7 +816,7 @@ function handleQUBC(){
               qnum ++
           } else {
               qnum = 0
-              handleQUBC()
+            //   handleQUBC()
           }
           break;
                         
@@ -824,6 +828,8 @@ function handleQUBC(){
 }
 let qnum = 0
 function handleQDBC(){
+    let uniqSpeciesQuestions = [...new Set(specificSpeciesQuestions)];
+let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
     li = document.querySelector('.question')
     switch (cnum) {
         case 0:
@@ -837,7 +843,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = specificNameQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         case 1:
@@ -852,7 +858,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = genderQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           // Do something for "up arrow" key press.
           break;
@@ -868,7 +874,7 @@ function handleQDBC(){
                 qnum --
             } else {
                 qnum = skintoneQuestions.length -1
-                handleQUBC()
+                // handleQDBC()
             }
           break;
         case 3:
@@ -883,7 +889,7 @@ function handleQDBC(){
                 qnum --
             } else {
                 qnum = eyeQuestions.length -1
-                handleQUBC()
+                // handleQDBC()
             }
             break;
             case 4:
@@ -898,7 +904,7 @@ function handleQDBC(){
                     qnum --
                 } else {
                     qnum = hairQuestions.length -1
-                    handleQUBC()
+                    // handleQDBC()
             }
             // Do something for "enter" or "return" key press.
             break;
@@ -914,7 +920,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = uniqHomeWolrdQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         case 6:
@@ -928,7 +934,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = uniqSpeciesQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         case 7:
@@ -943,7 +949,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = massQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         case 8:
@@ -957,7 +963,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = birthQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         case 9:
@@ -971,7 +977,7 @@ function handleQDBC(){
               qnum --
           } else {
               qnum = heightQuestions.length -1
-              handleQUBC()
+            //   handleQDBC()
           }
           break;
         default:
