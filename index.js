@@ -1090,17 +1090,20 @@ function handleAnswer(answer, question){
     
     scratchQ.innerText = `Q: ${question.question}`
 
-    if(answer == true){
+    
+
+    if (question.category.name == "Name" && answer == true){
+        console.log("Hot diggity dog!")
+        mysteryCard.classList.toggle('flipped')
+        scratchA.innerText = "Hello There!"
+        
+    } else if(answer == true){
         scratchA.innerText = "Hello There!"
     } else {
         scratchA.innerText = "* visible confustion *"
     }
 
-    if (question.category.name == "Name" && answer == true){
-        console.log("Hot diggity dog!")
-        mysteryCard.classList.toggle('flipped')
-        
-    }
+    
 
     outerScratchPanel.append(scratchQ, scratchA)
     console.log(question)
