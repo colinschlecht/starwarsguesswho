@@ -85,8 +85,8 @@
   #session-main{
     position: fixed;
     margin: auto;
-    max-height: fit-content;
-    max-width: fit-content;
+    max-height: 1280px;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -95,15 +95,15 @@
   }
   .session-top{
     display: flex;
-    min-height:40em;
-    min-width:80em;
+    min-height:500px;
+    min-width:1280px;
     border:1px solid;
   
   }
   .session-bottom{
     display: flex;
-    min-height:25em;
-    min-width:80em;
+    min-height:300px;
+    min-width:1280px;
     border:1px solid;
   
   }
@@ -111,22 +111,22 @@
   .outer-char-bio-panel{
     background-color: rgba(128, 128, 128, 0.331);
     display: flex;
-    min-width: 32.5em;
-    min-height:40em;
+    min-width: 470px;
+    min-height:470px;
    
   }
   
   .outer-mystery-panel{
     display: flex;
     background-color: rgba(0, 0, 255, 0.345);
-    min-width: 30em;
-    min-height:40em;
+    min-width: 340px;
+    min-height:470px;
          
   }
      
   .outer-scratch-panel{
-    min-height:40em;
-    min-width: 32.5em;
+    min-height:470px;
+    min-width: 450px;
     background-color: rgba(128, 128, 128, 0.379);
     display: flex;
   
