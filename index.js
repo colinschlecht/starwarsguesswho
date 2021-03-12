@@ -176,6 +176,8 @@ function chooseCharacters(char){
         }     
     }
     
+  
+
     
     const beginButtonArea = document.createElement('div')
     const outerBeginMenu = document.querySelector('.outer-begin-menu')
@@ -185,6 +187,7 @@ function chooseCharacters(char){
     outerBeginMenu.appendChild(beginMenu)
     beginButtonArea.appendChild(beginButton)
     outerBeginMenu.appendChild(beginButtonArea)
+    beginButton.style.display = 'none'
     
     beginButton.innerText = "BEGIN"
     beginMenu.className = "begin-menu-panel"
@@ -207,11 +210,11 @@ function chooseCharacters(char){
         pic.src = `public/${char.image}`
         charCard2.append(cname, pic)
         beginMenu.appendChild(charCard2)
-        // if($CHARS.length === 16){
-            // }
+        if($CHARS.length === 16){
+            beginButton.style.display = "block"
+            } 
         }
 
-    
 
 // post character select aka session mode
 
@@ -1074,9 +1077,14 @@ function questionControlFlow(question){
       handleAnswer(answer, question)
 }
 
-
+function toggleToggleToggle(char){
+    char.classList.toggle('flipped')
+}
 
 function handleAnswer(answer, question){
+
+    let mysteryCard = document.querySelector(".mystery_card")
+    let charCards = document.querySelectorAll(".char_card")
     const scratchQ = document.createElement('p')
     const scratchA = document.createElement('p')
     
@@ -1086,6 +1094,12 @@ function handleAnswer(answer, question){
         scratchA.innerText = "Hello There!"
     } else {
         scratchA.innerText = "* visible confustion *"
+    }
+
+    if (question.category.name == "Name" && answer == true){
+        console.log("Hot diggity dog!")
+        mysteryCard.classList.toggle('flipped')
+        
     }
 
     outerScratchPanel.append(scratchQ, scratchA)

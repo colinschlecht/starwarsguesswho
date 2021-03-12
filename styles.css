@@ -29,7 +29,9 @@ body{
 
 
 
-
+.example::-webkit-scrollbar {
+  display: none;
+}
 
 
 
@@ -190,6 +192,12 @@ input#un-mute:checked ~ .mute img {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
+.images .charSelectCard p{
+  display: none;
+}
+.begin-menu-panel .charSelectCard p {
+  display: none;
+}
 
 /* The Close Button */
 .close {
@@ -213,12 +221,12 @@ input#un-mute:checked ~ .mute img {
 }
 .outer-images {
   display: flex;
-  width: 600px;
-  height: 1235px;
+  width: 500px;
+  height: 750px;
 }
 .images {
-  width: 600px;
-  height: 1235px;
+  width: 500px;
+  height: 750px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -230,23 +238,22 @@ input#un-mute:checked ~ .mute img {
   box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
   border-radius: 6px;
   padding: 10px;
-  height:150;
-  width: 150;
+  height:100;
+  width: 100;
   background-image: url(card2.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  align-content: space-around;
+  align-content: center;
   margin-top: 2px;
 }
 img {
   box-shadow:20px red;
   border-radius: 6px;
-  height: 100px;
-  margin-bottom: 50px;
+  height: 63px;
   /* padding: 5px; */
 }
 
@@ -266,22 +273,24 @@ img {
 
 /* begin menu (selected characters) */
 .outer-begin-menu{
-  height: 1235px;
+  height: 750px;
   display: flex;
   flex-direction: column;
 }
 
 .begin-menu-panel{
-  height: 1235px;
+  height: 750px;
   display: flex;
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-  background-color: aqua;
+   background-repeat: no-repeat;
+   background-size: cover;
+   
 }
 
 /* ----------------------------------- main session ------------------------------------------ */
@@ -436,7 +445,7 @@ img {
 .mystery_card .mystery_back {
   background: rgba(104, 104, 109, 0.269);
   transform: rotateY( 180deg );
-   /* box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2); */
+   box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
    background-image: url(card2.png);
    background-repeat: no-repeat;
    background-size: cover;
@@ -448,7 +457,8 @@ img {
 }
 
 .mystery_card .mystery_back img{
-  height:90%
+    height: 65%;
+    padding-bottom: 65px;
 }
 
 .mystery_card .mystery_front img{
@@ -464,8 +474,9 @@ img {
 
    
 .outer-scratch-panel{
+  margin-left: 2px;
   background-color: rgba(128, 128, 128, 0.331);
-  width: 350px;
+  width: 348px;
   height:400px;
   color: white;
   overflow: scroll;
@@ -477,6 +488,10 @@ img {
 	align-content: flex-start;
 
 }
+.outer-scratch-panel::-webkit-scrollbar { 
+  display: none; 
+} 
+
 
 /* ------------------------------- questions ----------------------------------- */
 
