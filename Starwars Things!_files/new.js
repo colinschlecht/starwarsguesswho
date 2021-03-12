@@ -66053,7 +66053,24 @@ newlist[gnum-1].style.display="none"
 
 
 
-
+// question up
+function handleQDBC(){
+    let gnum = 0
+    let newList = ULLIST[cnum].querySelectorAll('li')
+    if(qnum === 0){
+        qnum = ULLIST[cnum].querySelectorAll('li').length -1
+        // gnum = qnum
+        // displayQuestion(gnum)
+        newList[newList.length-1].style.display = 'block'
+        newList[0].style.display = 'none'
+    } else {
+        qnum--
+        // gnum = qnum
+        // displayQuestion(gnum)
+        newList[qnum].style.display = 'block'
+        newList[qnum+1].style.display = 'none'
+    }
+}
 
 //-----return 16 questions for name specific to your chars
 let nameQuestions = []
@@ -66152,7 +66169,7 @@ for(q of questions){
  //----------------------------------------
  //----------------------------------------
 // question up
-
+let qnum = 0
 function handleQUBC(){
     li = document.querySelector('.question')
     let max = specificNameQuestions.length
@@ -66315,161 +66332,23 @@ function handleQUBC(){
       }
 
 }
-let qnum = 0
-function handleQDBC(){
-    li = document.querySelector('.question')
-    switch (cnum) {
-        case 0:
-            if (qnum > -1 && qnum < specificNameQuestions.length){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = specificNameQuestions[qnum].id
-                qli.innerText = specificNameQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = specificNameQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        case 1:
-           
-            if (qnum > -1 && qnum < genderQuestions.length){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = genderQuestions[qnum].id
-                qli.innerText = genderQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = genderQuestions.length -1
-              handleQUBC()
-          }
-          // Do something for "up arrow" key press.
-          break;
-        case 2:   
-               
-                if (qnum > -1 && qnum < skintoneQuestions){
-                    let qli = document.createElement('li')
-                    qli.className ="question"
-                    qli.id = skintoneQuestions[qnum].id
-                    qli.innerText = skintoneQuestions[qnum].question
-                questionUL.removeChild(li)
-                questionUL.appendChild(qli)
-                qnum --
-            } else {
-                qnum = skintoneQuestions.length -1
-                handleQUBC()
-            }
-          break;
-        case 3:
-         
-                if (qnum > -1 && qnum < eyeQuestions){
-                    let qli = document.createElement('li')
-                    qli.className ="question"
-                    qli.id = eyeQuestions[qnum].id
-                    qli.innerText = eyeQuestions[qnum].question
-                questionUL.removeChild(li)
-                questionUL.appendChild(qli)
-                qnum --
-            } else {
-                qnum = eyeQuestions.length -1
-                handleQUBC()
-            }
-            break;
-            case 4:
-             
-                    if (qnum > -1 && qnum < hairQuestions){
-                        let qli = document.createElement('li')
-                        qli.className ="question"
-                        qli.id = hairQuestions[qnum].id
-                        qli.innerText = hairQuestions[qnum].question
-                    questionUL.removeChild(li)
-                    questionUL.appendChild(qli)
-                    qnum --
-                } else {
-                    qnum = hairQuestions.length -1
-                    handleQUBC()
-            }
-            // Do something for "enter" or "return" key press.
-            break;
-        case 5:
-            
-            if (qnum > -1 && qnum < uniqHomeWolrdQuestions){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = uniqHomeWolrdQuestions[qnum].id
-                qli.innerText = uniqHomeWolrdQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = uniqHomeWolrdQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        case 6:
-            if (qnum > -1 && qnum < uniqSpeciesQuestions){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = uniqSpeciesQuestions[qnum].id
-                qli.innerText = uniqSpeciesQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = uniqSpeciesQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        case 7:
-            
-            if (qnum > -1 && qnum < massQuestions){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = massQuestions[qnum].id
-                qli.innerText = massQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = massQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        case 8:
-            if (qnum > -1 && qnum < birthQuestions){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = birthQuestions[qnum].id
-                qli.innerText = birthQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = birthQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        case 9:
-            if (qnum > -1 && qnum < heightQuestions){
-                let qli = document.createElement('li')
-                qli.className ="question"
-                qli.id = heightQuestions[qnum].id
-                qli.innerText = heightQuestions[qnum].question
-              questionUL.removeChild(li)
-              questionUL.appendChild(qli)
-              qnum --
-          } else {
-              qnum = heightQuestions.length -1
-              handleQUBC()
-          }
-          break;
-        default:
-          return; // Quit when this doesn't handle the key event.
-      }
 
-}
 
+// for reference
+// const outerQP = document.querySelector(".outer-questions-panel")
+
+
+// let catDiv = document.querySelector('.outer-categories')
+
+// let questionUL = document.createElement('ul')
+// let questionLI = document.createElement('li')
+// questionLI.className ="question"
+
+// outerQP.appendChild(tempUL)
+// questionLI.innerText = "PRESS ARROW KEY TO CHANGE CATEGORY/QUESTION, SPC TO SELECT"
+// questionUL.appendChild(questionLI)
+
+// let temph5 = document.createElement('h5')
+// temph5.innerText = "Categories"
+// temph5.className ="cat"
+// catDiv.appendChild(temph5)
