@@ -13,13 +13,15 @@ body{
 
 
 #wrapper {
+  background-position:center;
+  position: fixed;
   z-index: -1000;
   display: flex;
   align-content: center;
   justify-content:space-between;
   height: 100%;
-  width:100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  width:  100%;
+  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
   
 }
 
@@ -319,40 +321,43 @@ img {
 /* session-main div encompases the entirety of both character selections */
 
 #session-main{
+  border-radius: 10px;
   position: fixed;
   margin: auto;
-  
-  max-width: 1288px;
-  min-width: 1280px;
+  height: 750px;
+  width: 1000px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  border:1px solid;
 
 }
 .session-top{
+  border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
-  min-height:500px;
-  min-width:1280px;
-  max-width: 1288px;
-  border:1px solid;
+  height:450px;
+  width: 1000px;
 
 }
 .session-bottom{
+  border-radius: 20px;
   display: flex;
-  min-width:1280px;
-  max-width: 1288px;
-  min-height: 378px;
-  border:1px solid;
+  width: 1000px;
+  height: 300px;
+  background-image: url(ui-cutout.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
 
 }
 /*------------- bio ----------------*/
 .outer-char-bio-panel{
   background-color: rgba(128, 128, 128, 0.331);
   display: flex;
-  min-width: 470px;
-  min-height:470px;
+  width: 350px;
+  height:400px;
+  color: white;
+  overflow: hidden;
  
 }
 /*------------- mystery categories area ----------------*/
@@ -360,9 +365,9 @@ img {
 .mystery-categories{
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 255, 0.345);
-  min-width: 340px;
-  min-height:470px;
+  
+  width: 300px;
+  height:400px;
 }
 
 .mystery-categories h5 {
@@ -371,15 +376,25 @@ img {
 /*------------- mystery character area ----------------*/
 .outer-mystery-panel{
   display: flex;
-  background-color: rgba(0, 0, 255, 0.345);
-  min-width: 335px;
-  min-height:440px;
+  background-color: rgba(0, 0, 255, 0);
+  width: 300px;
+  height:300px;
+  font-size: 20;
+  color: gold;
+  text-indent: 2px;
+  text-shadow: lightblue;
 }
 
 /*---------------------------- categories ---------------------------*/
 .outer-categories {
-  min-width:335x;
-  min-height:30px;
+  width:300px;
+  height:100px;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-end;
+	align-content: center;
 }
 
 /*------ mystery character card ------*/
@@ -431,8 +446,8 @@ img {
 }
 
 .mystery_card .mystery_front img{
-  min-width:100%;
-  min-height:100%;
+  width:100%;
+  height:100%;
 }
 .mystery_card.flipped {
   transform: rotateY( 180deg );
@@ -443,69 +458,86 @@ img {
 
    
 .outer-scratch-panel{
-  min-height:470;
-  min-width: 470;
-  background-color: rgba(128, 128, 128, 0.379);
+  background-color: rgba(128, 128, 128, 0.331);
+  width: 350px;
+  height:400px;
+  color: white;
+  overflow: scroll;
   display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: flex-start;
 
 }
 
 /* ------------------------------- questions ----------------------------------- */
 
 .outer-questions-panel {
-  max-width: 1278;
-  min-width: 1276px;
-  max-height: 30px;
-  min-height: 27px;
+  width: 1000px;
+  height: 50px;
+  display: flex;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 .outer-questions-panel li{
   color: white;
+  list-style-type: none;
+  padding: 0px;
+  margin: auto;
 }
 
 /*----------------------------------- bottom half of main div------------------------------------ */
 
 .outer-left-div{
-  background-color: rgba(165, 42, 42, 0.392);
+  /* background-color: rgba(165, 42, 42, 0.392); */
   display:flex;
   align-items: flex-end;
-  max-height: 300px;
-  min-height: 290px;
-  max-width:30px;
-  min-width:27px;
+  height: 300px;
+  width:100px; 
+  border-radius: 20px 0px 0px 20px;
 }
 .outer-right-div{
-  background-color: rgba(165, 42, 42, 0.393);
-  display: flex;
+  /* background-color: rgba(165, 42, 42, 0.393); */
+  border-radius: 0px 20px 20px 0px;
+  display: flex;  
   align-items: flex-start;
-  max-height: 300px;
-  min-height: 290px;
-  max-width:30px;
-  min-width:27px;
-  
+  height: 300px;
+  width:100px;
 }
 
 /* ----------------------- character display ---------------------- */
 .outer-character-display-panel{
-  padding: 1em;
-  background-color: rgba(165, 98, 98, 0.153);
+  /* padding: 1em; */
+  /* background-color: rgba(165, 98, 98, 0.153); */
   background-repeat: inherit;
-  max-width: 1220px;
-  max-height: 25em;
-  min-width: 1216px;
+  width: 800px;
+  height: 300px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  align-content: space-around;
+  align-content: center;
 } 
 
 .inner-char-traits-div{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  height: 325px;
+  width: 350px;
 }
+
+
 
 
 /* ---- character card flip ---- */
@@ -513,10 +545,15 @@ img {
 /* perspective */
 
 .char_container {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   position: relative;
   /* perspective: 800px; */
+}
+.char_container img {
+  width: 63px;
+  height: 63px;
+  margin: 0;
 }
 
 /*flipping*/
@@ -546,9 +583,9 @@ img {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  align-content: space-around;
+  align-content: center;
 }
 
 .char_card .char_back {

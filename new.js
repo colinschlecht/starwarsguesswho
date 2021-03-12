@@ -65755,7 +65755,7 @@ function fillCharacterTray(){
         pic.src = `public/${char.image}`
         pic2.src = "card_back_1.png"
         charBack.append(pic2)
-        charFront.append(cname, pic)
+        charFront.append( pic)
         charCard.append(charFront, charBack)
         charContainer.appendChild(charCard)
         outerCharTray.appendChild(charContainer)
@@ -65820,38 +65820,38 @@ function displayCharTraits(char){
     };
         let name = document.createElement('h5')
         let pic = document.createElement('img')
-        let gender = document.createElement('h5') 
-        let species = document.createElement('h5') 
-        let homeworld = document.createElement('h5') 
-        let hair = document.createElement('h5') 
-        let eye = document.createElement('h5') 
-        let height = document.createElement('h5')
-        let mass = document.createElement('h5') 
-        let skin = document.createElement('h5') 
-        let birth = document.createElement('h5') 
+        let gender = document.createElement('p') 
+        let species = document.createElement('p') 
+        let homeworld = document.createElement('p') 
+        let hair = document.createElement('p') 
+        let eye = document.createElement('p') 
+        let height = document.createElement('p')
+        let mass = document.createElement('p') 
+        let skin = document.createElement('p') 
+        let birth = document.createElement('p') 
 
         pic.src = `public/${char.image}`
-        name.textContent = char.name
-        gender.textContent = char.gender
-        species.textContent = char.species.name
-        homeworld.textContent = char.homeworld.name
-        hair.textContent = char.hair_color
-        eye.textContent = char.eye_color
-        skin.textContent = char.skin_tone
+        name.textContent = `Name: ${char.name}`
+        gender.textContent = `Gender: ${char.gender}`
+        species.textContent = `Species: ${char.species.name}`
+        homeworld.textContent = `Home: ${char.homeworld.name}`
+        hair.textContent = `Hair: ${char.hair_color}`
+        eye.textContent = `Eye: ${char.eye_color}`
+        skin.textContent = `Complexion: ${char.skin_tone}`
         if(char.height === 0){
             height.textContent = "unknown"
         } else {
-            height.textContent = char.height
+            height.textContent = `Height: ${char.height} cm`
         };
         if(char.mass === 0 ) {
             mass.textContent = "unknown"
         } else {
-            mass.textContent = char.mass
+            mass.textContent = `Mass: ${char.mass}`
         };
         if(char.birth_year === 0){
             birth.textContent = "unknown"
         } else {
-            birth.textContent = char.birth_year
+            birth.textContent = `Birth Year ${char.birth_year} (BBY)`
         };
         innerCharTraits.append(name, pic, gender, species, homeworld, hair, eye, skin, height, mass, birth);
 }
@@ -66469,11 +66469,11 @@ function handleAnswer(answer, question){
     
     scratchQ.innerText = `Q: ${question.question}`
 
-    // if(answer == true){
-    //     scratchA.innerText = "Hello There!"
-    // } else {
-    //     scratchA.innerText = "* visible confustion *"
-    // }
+    if(answer == true){
+        scratchA.innerText = "Hello There!"
+    } else {
+        scratchA.innerText = "* visible confustion *"
+    }
 
     outerScratchPanel.append(scratchQ, scratchA)
     console.log(question)
