@@ -1085,9 +1085,10 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
 }
 
 let touchLI = document.querySelector(".question")
-touchLI.addEventListener("click", handleAsk())
+touchLI.addEventListener("click", handleAsk(e))
 
 function handleAsk(){
+    e.preventDefault
     let ask = document.querySelector(".question")
     let question = questions.find(question => question.id == ask.id)
     questionControlFlow(question)
