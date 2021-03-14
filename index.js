@@ -510,6 +510,7 @@ function generateQuestionaire(){
         questions.push(question)
     }
     flowQuestions()
+    
 }
 
 // const removeDuplicateCats = (categories) => {
@@ -758,6 +759,7 @@ for(q of questions){
  //----------------------------------------
  //----------------------------------------
 // question up
+
 }
 
 function handleQUBC(){
@@ -1084,8 +1086,7 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
 
 }
 
-// let touchLI = document.querySelector(".question")
-// touchLI.addEventListener("click", ()=>handleAsk())
+
 
 function handleAsk(){
     let ask = document.querySelector(".question")

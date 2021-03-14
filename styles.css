@@ -1,7 +1,7 @@
 
 html{
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
+  overflow: auto;
 
 }
 
@@ -9,10 +9,12 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow:auto;
 }
 
 
 #wrapper {
+  
   background-position:center;
   position: fixed;
   z-index: -1000;
@@ -29,7 +31,7 @@ body{
 
 
 
-.example::-webkit-scrollbar {
+html::-webkit-scrollbar {
   display: none;
 }
 
