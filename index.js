@@ -1084,6 +1084,9 @@ let uniqHomeWolrdQuestions = [...new Set(specificHomeworldQuestions)];
 
 }
 
+let touchLI = document.querySelector(".question")
+touchLI.addEventListener("click", handleAsk())
+
 function handleAsk(){
     let ask = document.querySelector(".question")
     let question = questions.find(question => question.id == ask.id)
