@@ -14,12 +14,22 @@ var btn = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal and load characters
 window.addEventListener('load', () => {
 
-    const charsURL = "http://localhost:3000/characters"
+    const charsURL = "https://swgw.herokuapp.com/characters"
+    const questURL = "https://swgw.herokuapp.com/questions"
     
     function fetchAll(){
         fetch(charsURL)
         .then(resp => resp.json())
         .then(megaList => load(megaList))
+    }  
+    function fetchAllQuestions(){
+        fetch(questURL)
+        .then(resp => resp.json())
+        .then(allQuestions => {
+            for(let quest of allQuestions){
+                questions.push(quest)
+            }
+        })
     }  
     
     function load(megaList){
@@ -36,6 +46,7 @@ window.addEventListener('load', () => {
         seedCategories(CHARDISPLAY1)
     }
     fetchAll()
+    fetchAllQuestions()
     
     modal.style.display = "block";
 })
