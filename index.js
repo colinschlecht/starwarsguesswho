@@ -181,14 +181,19 @@ function displayCharOptions(charList, optionsArray){
 }
 
 function chooseCharacters(char){
-        if($CHARS.length < 16 ){
+        if($CHARS.length < 16 && $CHARS.indexOf(char) === -1 ){
             $CHARS.push(char)
             fillCharacter(char)
         }     
+        console.log($CHARS)
     }
     
   
-
+    for(let elem of $CHARS){
+        if(elem.id == thingy.id){
+            $CHARS.splice($CHARS.indexOf(elem), 1)
+        }
+    }
     
     const beginButtonArea = document.createElement('div')
     const outerBeginMenu = document.querySelector('.outer-begin-menu')
@@ -219,7 +224,8 @@ function chooseCharacters(char){
             removeCharacter(e)
         })
         
-        charCard2.id = 
+        charCard2.id = char.id
+        pic.id = char.id
         charCard2.className = "charSelectCard"
         cname.textContent = char.name
         pic.src = `public/${char.image}`
@@ -231,15 +237,19 @@ function chooseCharacters(char){
             beginButton.style.display = "block"
             } 
         }
+
     function removeCharacter(e){
         let thingy = e.target
-        console.log(thingy)
         if(thingy.className == "charSelectCard"){
             thingy.remove()
         } else {
             thingy.parentNode.remove()
             }
-        $CHARS.pop()
+        for(let elem of $CHARS){
+            if(elem.id == thingy.id){
+                $CHARS.splice($CHARS.indexOf(elem), 1)
+            }
+        }
         };
     
 
