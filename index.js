@@ -214,18 +214,34 @@ function chooseCharacters(char){
         let charCard2 = document.createElement('div')
         let cname = document.createElement('p')
         let pic = document.createElement('img')
+
+        charCard2.addEventListener('click', (e)=> {
+            removeCharacter(e)
+        })
         
-        charCard2.id = char.id
+        charCard2.id = 
         charCard2.className = "charSelectCard"
         cname.textContent = char.name
         pic.src = `public/${char.image}`
+        pic.className = "charSelectPic"
+
         charCard2.append(cname, pic)
         beginMenu.appendChild(charCard2)
         if($CHARS.length === 16){
             beginButton.style.display = "block"
             } 
         }
-
+    function removeCharacter(e){
+        let thingy = e.target
+        console.log(thingy)
+        if(thingy.className == "charSelectCard"){
+            thingy.remove()
+        } else {
+            thingy.parentNode.remove()
+            }
+        $CHARS.pop()
+        };
+    
 
 // post character select aka session mode
 
