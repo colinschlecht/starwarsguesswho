@@ -441,6 +441,8 @@ img {
   width: 100%;
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 .mystery_card .mystery_front {
   background: rgba(104, 104, 109, 0.269);
@@ -605,6 +607,8 @@ img {
   /* line-height: 150px; */
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 .char_card .char_front {
   box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
@@ -630,4 +634,9 @@ img {
 }
 .char_card.flipped {
   transform: rotateY( 180deg );
+}
+
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
 }
