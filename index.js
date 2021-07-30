@@ -77,36 +77,6 @@ main.style.display = "none"
 
 
 
-// on page load - call is made to db and character options are loaded
-//temporarily moved to window load
-// document.addEventListener("DOMContentLoaded", () => {
-    
-//     const charsURL = "http://localhost:3000/characters"
-    
-//     function fetchAll(){
-//         fetch(charsURL)
-//         .then(resp => resp.json())
-//         .then(megaList => load(megaList))
-//     }  
-    
-//     function load(megaList){
-//         let CHARDISPLAY1 = megaList.slice(0,20)
-//         CHARDISPLAY1.id = 1
-//         let CHARDISPLAY2 = megaList.slice(21,41)
-//         CHARDISPLAY2.id = 2
-//         let CHARDISPLAY3 = megaList.slice(42,62)
-//         CHARDISPLAY3.id = 3
-//         let CHARDISPLAY4 = megaList.slice(63,81)
-//         CHARDISPLAY4.id = 4
-//         optionsArray = [CHARDISPLAY1, CHARDISPLAY2, CHARDISPLAY3, CHARDISPLAY4]
-//         displayCharOptions(CHARDISPLAY1, optionsArray)
-//         seedCategories(CHARDISPLAY1)
-//     }
-//     fetchAll()
-
-    
-// })
-
 function seedCategories(CHARDISPLAY1){
     let seederQs = CHARDISPLAY1[0].questions
     for(let q of seederQs){
@@ -207,7 +177,7 @@ function chooseCharacters(char){
     
     beginButton.innerText = "BEGIN"
     beginMenu.className = "begin-menu-panel"
-    beginButtonArea.className = "charOptionsSelect"
+    beginButtonArea.className = "charOptionsSelect begin"
     
     beginButton.addEventListener('click', () =>{
             pre.style.display = "none"
@@ -264,23 +234,6 @@ const innerRight = document.querySelector('.inner-right-div')
 
 const outerCharTray = document.querySelector('.outer-character-display-panel')
 
-// function fillCharacterTray(){
-    
-//     for (let char of $CHARS){
-//         let charCard3 = document.createElement('div')
-//         let cname = document.createElement('p')
-//         let pic = document.createElement('img')
-
-//         charCard3.id = char.id
-//         charCard3.className = "charSelectCard"
-//         cname.textContent = char.name
-//         pic.src = `public/${char.image}`
-
-//         charCard3.append(cname, pic)
-//         outerCharTray.appendChild(charCard3)
-//     }
-
-// }
 
 
 let uniqCats =[
@@ -350,13 +303,6 @@ let uniqCats =[
 
 let cnum = 0
 
-
-// const innerCharTray = document.querySelector('.inner-character-display-panel')
-// const outerLeft = document.querySelector('.outer-left-div')
-// const outerRight = document.querySelector('.outer-right-div')
-// const innerLeft = document.querySelector('.inner-left-div')
-// const innerRight = document.querySelector('.inner-right-div')
-// const outerCharTray = document.querySelector('.outer-character-display-panel')
 const outerScratchPanel = document.querySelector('.outer-scratch-panel')
 const outerCharTraits = document.querySelector('.outer-char-bio-panel')
 const innerCharTraits = document.createElement('div')
@@ -382,7 +328,6 @@ temph5.innerText = "Categories"
 temph5.className ="cat"
 catDiv.appendChild(temph5)
 
-// document.addEventListener("DOMContentLoaded", fillCharacterTray())
 function fillCharacterTray(){
     for (let char of $CHARS){
         let charContainer = document.createElement('div')
@@ -456,10 +401,6 @@ function createMysteryCharacter(){
     
 }
 
-// const cheat = () => {
-//     console.log("type hint")
-//     console.log(`Mystery character name: ${mysteryCharacter.name}`)
-// }
 
 function displayCharTraits(char){
     while (innerCharTraits.firstChild) {
@@ -513,22 +454,6 @@ function generateQuestionaire(){
     
 }
 
-// const removeDuplicateCats = (categories) => {
-//     const flag = [];
-//     const unique = [];
-//     categories.forEach(elem => {
-//         if(!flag[elem.name]){
-//             flag[elem.name] = true;
-//             unique.push(elem);
-//         }
-//     })
-//     return unique;
-// } delete
-
-
-// const uniqCats = removeDuplicateCats(categories); keep
-
-
 
 let QLB = document.querySelector(".left")
 let QRB = document.querySelector(".right")
@@ -541,9 +466,6 @@ QRB.addEventListener('click', () =>{
 handleCRBC()})
 
 
-
-
-
 document.addEventListener('touchstart', handleTouchStart, false);        
 document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -551,8 +473,8 @@ var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-  return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
+  return evt.touches ||             
+         evt.originalEvent.touches; 
 }                                                     
 
 function handleTouchStart(evt) {
