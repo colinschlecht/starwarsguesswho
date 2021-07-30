@@ -5,12 +5,6 @@ html{
   overflow: none;
 }
 
-body{
-  width: 100vw;
-  height: 100vh;
-  overflow: none;
-}
-
 
 #wrapper {
   
@@ -27,18 +21,9 @@ body{
 }
 
 
-
-
-
 html::-webkit-scrollbar {
   display: none;
 }
-
-
-
-
-
-
 
 
 

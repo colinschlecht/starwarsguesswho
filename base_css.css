@@ -1,7 +1,14 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: none;
+	margin: auto;
+}
+
 /* ----------------------------------- character selection (dom content loaded) ------------------------------------------ */
 
-#play{
-  display: none;
+#play {
+	display: none;
 }
 
 /* input#un-mute {
@@ -22,100 +29,169 @@ input#un-mute:checked ~ .mute img {
 
 /* The Modal (background) */
 
-.modal button{
-  display: none;
+.modal button {
+	display: none;
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1000; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
 }
-.images .charSelectCard p{
-  display: none;
+.images .charSelectCard p {
+	display: none;
 }
 .begin-menu-panel .charSelectCard p {
-  display: none;
+	display: none;
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* pre-session div encompases the entirety of both character selections */
-#pre-session { 
-  display:flex;
-  margin: auto;
-  height: 100%;
-  width: 100%;
+#pre-session {
+	display: flex;
+	margin: auto;
+	height: 100%;
+	width: 100%;
 }
 .outer-images {
-  display: flex;
- max-width: 50%;
- max-height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  align-content:center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
 }
 .images {
-  padding: 2%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-around;
+  overflow-y: scroll;
+	height: 80%;
+  max-width: 400px;
+	padding: 2%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
 }
 .charSelectCard {
-  box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
-  border-radius: 6px;
-  padding: 10px;
-  height:100;
-  width: 100;
-  background-image: url(card2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin-top: 2px;
+	box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, 0.2);
+	border-radius: 6px;
+	padding: 10px;
+	height: 100;
+	width: 100;
+	background-image: url(card2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin-top: 2px;
 }
 img {
-  box-shadow:20px red;
-  border-radius: 6px;
-  height: 63px;
-  /* padding: 5px; */
+	box-shadow: 20px red;
+	border-radius: 6px;
+	height: 63px;
+	/* padding: 5px; */
 }
 
 /*--------- button div(s) --------*/
-#charOptionsSelect{
+#charOptionsSelect {
+	position: absolute;
+	bottom: 2em;
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-around;
+}
+.charSelectButtons {
+	margin: auto;
+}
+
+#charOptionsSelect button {
+	transition: all 0.2s ease-in-out;
+
+	background-color: transparent;
+	color: white;
+	font-size: 1.1em;
+	border: none;
+}
+#charOptionsSelect button:hover {
+	transition: all 0.2s ease-in-out;
+
+	background-color: transparent;
+	color: white;
+	font-size: 1.5em;
+	border: none;
+	cursor: pointer;
+  box-shadow: 0.3px 0.3px transparent, -0.04em 0 1em rgba(0, 0, 255, 0.2);
+
+}
+
+/* begin menu (selected characters) */
+.outer-begin-menu {
+  height: 100%;
   width: 100%;
+	display: flex;
+	flex-direction: column;
+  justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.begin-menu-panel {
+  overflow-y: scroll;
+	padding: 2%;
+	height: 80%;
+  max-width: 400px;
+	display: flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}
+
+.charOptionsSelect.begin {
+  position: absolute;
+  bottom: 1.6em;
+  width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -123,169 +199,132 @@ img {
   align-items: center;
   align-content: space-around;
 }
-.charSelectButtons{
-  margin: auto;
+
+.charOptionsSelect.begin button {
+	transition: all 0.2s ease-in-out;
+	background-color: transparent;
+	color: white;
+	font-size: 1.5em;
+	border: none;
 }
 
-/* begin menu (selected characters) */
-.outer-begin-menu{
-  height: 100%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-}
-
-.begin-menu-panel{
-  padding: 2%;  
-  height: 90%;
-  display: flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-around; 
-}
-
-.charOptionsSelect.begin{
-  width: 100%;
-  margin-bottom: 4.1vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.charOptionsSelect.begin button{
- background-color: transparent;
-color: white;
-font-size: 1.5em;
-border: none;
-}
-.charOptionsSelect.begin button:hover{
-  transition: all .2s ease-in-out;
- background-color: transparent;
-color: white;
-font-size: 2em;
-border: none;
-cursor: pointer;
-box-shadow: .3px .3px transparent, -.04em 0 1em rgba(0, 0, 255, .2);
+.charOptionsSelect.begin button:hover {
+	transition: all 0.2s ease-in-out;
+	background-color: transparent;
+	color: white;
+	font-size: 2em;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0.3px 0.3px transparent, -0.04em 0 1em rgba(0, 0, 255, 0.2);
 }
 
 /* ----------------------------------- main session ------------------------------------------ */
 
 /* The Modal (background) */
 .modal2 {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1000; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content2 {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
 .close2 {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close2:hover,
 .close2:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* session-main div encompases the entirety of both character selections */
 
-#session-main{
-  border-radius: 10px;
-  position: fixed;
-  margin: auto;
-  height: 750px;
-  width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-
+#session-main {
+	border-radius: 10px;
+	position: fixed;
+	margin: auto;
+	height: 750px;
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
-.session-top{
-  border-radius: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  height:450px;
-  width: 1000px;
-
+.session-top {
+	border-radius: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 450px;
+	width: 1000px;
 }
-.session-bottom{
-  border-radius: 20px;
-  display: flex;
-  width: 1000px;
-  height: 300px;
-  background-image: url(ui-cutout.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-
+.session-bottom {
+	border-radius: 20px;
+	display: flex;
+	width: 1000px;
+	height: 300px;
+	background-image: url(ui-cutout.png);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 /*------------- bio ----------------*/
-.outer-char-bio-panel{
-  background-color: rgba(128, 128, 128, 0.331);
-  display: flex;
-  width: 350px;
-  height:400px;
-  color: white;
-  overflow: hidden;
- 
+.outer-char-bio-panel {
+	background-color: rgba(128, 128, 128, 0.331);
+	display: flex;
+	width: 350px;
+	height: 400px;
+	color: white;
+	overflow: hidden;
 }
 /*------------- mystery categories area ----------------*/
 
-.mystery-categories{
-  display: flex;
-  flex-direction: column;
-  
-  width: 300px;
-  height:400px;
+.mystery-categories {
+	display: flex;
+	flex-direction: column;
+
+	width: 300px;
+	height: 400px;
 }
 
 .mystery-categories h5 {
-  color: white;
+	color: white;
 }
 /*------------- mystery character area ----------------*/
-.outer-mystery-panel{
-  display: flex;
-  background-color: rgba(0, 0, 255, 0);
-  width: 300px;
-  height:300px;
-  font-size: 20;
-  color: gold;
-  text-indent: 2px;
-  text-shadow: lightblue;
+.outer-mystery-panel {
+	display: flex;
+	background-color: rgba(0, 0, 255, 0);
+	width: 300px;
+	height: 300px;
+	font-size: 20;
+	color: gold;
+	text-indent: 2px;
+	text-shadow: lightblue;
 }
 
 /*---------------------------- categories ---------------------------*/
 .outer-categories {
-  width:300px;
-  height:100px;
-  display: flex;
+	width: 300px;
+	height: 100px;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
@@ -296,93 +335,88 @@ box-shadow: .3px .3px transparent, -.04em 0 1em rgba(0, 0, 255, .2);
 /*------ mystery character card ------*/
 /* perspective */
 .mystery_container {
-  width: 300px;
-  height: 300px;
-  position: relative;
+	width: 300px;
+	height: 300px;
+	position: relative;
 }
 
 /*flipping*/
 
 .mystery_card {
-  margin-left: .15em;
-  margin-right: .15em;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  
+	margin-left: 0.15em;
+	margin-right: 0.15em;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: transform 1s;
+	transform-style: preserve-3d;
 }
 .mystery_card div {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
 }
 .mystery_card .mystery_front {
-  background: rgba(104, 104, 109, 0.269);
+	background: rgba(104, 104, 109, 0.269);
 }
 .mystery_card .mystery_back {
-  background: rgba(104, 104, 109, 0.269);
-  transform: rotateY( 180deg );
-   box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
-   background-image: url(card2.png);
-   background-repeat: no-repeat;
-   background-size: cover;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
-   align-content: space-around;
+	background: rgba(104, 104, 109, 0.269);
+	transform: rotateY(180deg);
+	box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, 0.2);
+	background-image: url(card2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
 }
 
-.mystery_card .mystery_back img{
-    height: 65%;
-    padding-bottom: 65px;
+.mystery_card .mystery_back img {
+	height: 65%;
+	padding-bottom: 65px;
 }
 
-.mystery_card .mystery_front img{
-  width:100%;
-  height:100%;
+.mystery_card .mystery_front img {
+	width: 100%;
+	height: 100%;
 }
 .mystery_card.flipped {
-  transform: rotateY( 180deg );
+	transform: rotateY(180deg);
 }
-
 
 /*---------------------------- scratch panel ---------------------------*/
 
-   
-.outer-scratch-panel{
-  margin-left: 2px;
-  background-color: rgba(128, 128, 128, 0.331);
-  width: 348px;
-  height:400px;
-  color: white;
-  overflow: scroll;
-  display: flex;
+.outer-scratch-panel {
+	margin-left: 2px;
+	background-color: rgba(128, 128, 128, 0.331);
+	width: 348px;
+	height: 400px;
+	color: white;
+	overflow: scroll;
+	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: baseline;
 	align-content: flex-start;
-
 }
-.outer-scratch-panel::-webkit-scrollbar { 
-  display: none; 
-} 
-
+.outer-scratch-panel::-webkit-scrollbar {
+	display: none;
+}
 
 /* ------------------------------- questions ----------------------------------- */
 
 .outer-questions-panel {
-  width: 1000px;
-  height: 50px;
-  display: flex;
-  display: flex;
+	width: 1000px;
+	height: 50px;
+	display: flex;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
@@ -390,131 +424,125 @@ box-shadow: .3px .3px transparent, -.04em 0 1em rgba(0, 0, 255, .2);
 	align-content: center;
 }
 
-.outer-questions-panel li{
-  color: white;
-  list-style-type: none;
-  padding: 0px;
-  margin: auto;
+.outer-questions-panel li {
+	color: white;
+	list-style-type: none;
+	padding: 0px;
+	margin: auto;
 }
 
 /*----------------------------------- bottom half of main div------------------------------------ */
 
-.outer-left-div{
-  /* background-color: rgba(165, 42, 42, 0.392); */
-  display:flex;
-  align-items: flex-end;
-  height: 300px;
-  width:100px; 
-  border-radius: 20px 0px 0px 20px;
+.outer-left-div {
+	/* background-color: rgba(165, 42, 42, 0.392); */
+	display: flex;
+	align-items: flex-end;
+	height: 300px;
+	width: 100px;
+	border-radius: 20px 0px 0px 20px;
 }
-.outer-left-div button{
-  display: none;
+.outer-left-div button {
+	display: none;
 }
-.outer-right-div button{
-  display: none;
+.outer-right-div button {
+	display: none;
 }
-.outer-right-div{
-  /* background-color: rgba(165, 42, 42, 0.393); */
-  border-radius: 0px 20px 20px 0px;
-  display: flex;  
-  align-items: flex-start;
-  height: 300px;
-  width:100px;
+.outer-right-div {
+	/* background-color: rgba(165, 42, 42, 0.393); */
+	border-radius: 0px 20px 20px 0px;
+	display: flex;
+	align-items: flex-start;
+	height: 300px;
+	width: 100px;
 }
 
 /* ----------------------- character display ---------------------- */
-.outer-character-display-panel{
-  /* padding: 1em; */
-  /* background-color: rgba(165, 98, 98, 0.153); */
-  background-repeat: inherit;
-  width: 800px;
-  height: 300px;
+.outer-character-display-panel {
+	/* padding: 1em; */
+	/* background-color: rgba(165, 98, 98, 0.153); */
+	background-repeat: inherit;
+	width: 800px;
+	height: 300px;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-} 
-
-.inner-char-traits-div{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 325px;
-  width: 350px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
-
-
+.inner-char-traits-div {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	height: 325px;
+	width: 350px;
+}
 
 /* ---- character card flip ---- */
 
 /* perspective */
 
 .char_container {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  /* perspective: 800px; */
+	width: 100px;
+	height: 100px;
+	position: relative;
+	/* perspective: 800px; */
 }
 .char_container img {
-  width: 63px;
-  height: 63px;
-  margin: 0;
+	width: 63px;
+	height: 63px;
+	margin: 0;
 }
 
 /*flipping*/
 
 .char_card {
-  margin-left: .15em;
-  margin-right: .15em;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  
+	margin-left: 0.15em;
+	margin-right: 0.15em;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: transform 1s;
+	transform-style: preserve-3d;
 }
 .char_card div {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  /* line-height: 150px; */
-  position: absolute;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	/* line-height: 150px; */
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
 }
 .char_card .char_front {
-  box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, .2);
-  background-image: url(card2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+	box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, 0.2);
+	background-image: url(card2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 .char_card .char_back {
-  background: rgba(104, 104, 109, 0.269);
-  transform: rotateY( 180deg );
+	background: rgba(104, 104, 109, 0.269);
+	transform: rotateY(180deg);
 }
 
-.char_card .char_back img{
-  min-width:100%;
-  min-height:100%;
-
+.char_card .char_back img {
+	min-width: 100%;
+	min-height: 100%;
 }
 .char_card.flipped {
-  transform: rotateY( 180deg );
+	transform: rotateY(180deg);
 }
 
-
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+	/* Style adjustments for viewports that meet the condition */
 }
