@@ -73,7 +73,9 @@ let $CHARS = []
 
 const pre = document.querySelector('#pre-session')
 const main = document.querySelector("#session-main")
+const maincont = document.querySelector("#session-main-cont")
 main.style.display = "none"
+maincont.style.display = "none"
 
 
 
@@ -181,6 +183,7 @@ function chooseCharacters(char){
     
     beginButton.addEventListener('click', () =>{
             pre.style.display = "none"
+            maincont.style.display = "flex"
             main.style.display = "flex"
             fillCharacterTray()
         })

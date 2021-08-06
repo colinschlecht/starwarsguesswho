@@ -3,6 +3,7 @@ body {
 	height: 100vh;
 	overflow: none;
 	margin: auto;
+	caret-color: transparent;
 }
 
 body::-webkit-scrollbar {
@@ -280,13 +281,19 @@ img {
 }
 
 /* session-main div encompases the entirety of both character selections */
-
+#session-main-cont {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
 #session-main {
+	margin: auto;
 	border-radius: 10px;
 	position: fixed;
 	margin: auto;
-	height: 750px;
-	width: 1000px;
+	max-height: 750px;
+	max-width: 1000px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
