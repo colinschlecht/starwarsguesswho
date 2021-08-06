@@ -5,6 +5,10 @@ body {
 	margin: auto;
 }
 
+body::-webkit-scrollbar {
+	display: none;
+}
+
 /* ----------------------------------- character selection (dom content loaded) ------------------------------------------ */
 
 #play {
@@ -92,6 +96,9 @@ input#un-mute:checked ~ .mute img {
 	width: 100%;
 	min-height: 100%;
 }
+.outer-images::-webkit-scrollbar {
+	display: none;
+}
 .images {
   overflow-y: scroll;
 	height: 80%;
@@ -103,6 +110,10 @@ input#un-mute:checked ~ .mute img {
 	justify-content: space-around;
 	align-items: center;
 	align-content: space-around;
+}
+
+.images::-webkit-scrollbar {
+	display: none;
 }
 .charSelectCard {
 	box-shadow: 10px 10px 30px 2px rgba(0, 0, 255, 0.2);
@@ -138,6 +149,10 @@ img {
 	justify-content: center;
 	align-items: center;
 	align-content: space-around;
+}
+
+#charOptionsSelect::-webkit-scrollbar {
+	display: none;
 }
 .charSelectButtons {
 	margin: auto;
@@ -187,6 +202,9 @@ img {
 	align-items: center;
 	align-content: space-around;
 }
+.begin-menu-panel::-webkit-scrollbar {
+	display: none;
+}
 
 .charOptionsSelect.begin {
   position: absolute;
@@ -198,6 +216,9 @@ img {
   justify-content: center;
   align-items: center;
   align-content: space-around;
+}
+.charOptionsSelect::-webkit-scrollbar {
+	display: none;
 }
 
 .charOptionsSelect.begin button {
